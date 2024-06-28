@@ -72,7 +72,7 @@ const Slider = () => {
                     : "bg-gradient-to-r from-[#0065AE] to-[rgba(15, 49, 97, 0)]"
                 }`}
               >
-                <div className="text-white max-w-lg ml-8">
+                <div className="text-white max-w-lg ml-[120px]">
                   <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
                   <p className="mb-8">{slide.description}</p>
                   <div className="flex space-x-4">
