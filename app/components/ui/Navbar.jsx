@@ -12,14 +12,14 @@ const CustomLink = ({ href, children, className }) => {
 
   if (isExternalLink) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={`text-black hover:text-gray-300 ${className}`}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={`text-black ${className}`}>
         {children}
       </a>
     );
   } else {
     return (
       <Link href={href}>
-        <div className={`text-black hover:text-gray-300 ${className}`}>
+        <div className={`text-black ${className}`}>
           {children}
         </div>
       </Link>
@@ -35,8 +35,20 @@ const NavBar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white text-black z-50 shadow-md">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="fixed top-0 left-0 w-full bg-white text-black z-50 shadow-md mb-4">
+      <style jsx>{`
+        .gradient-border {
+          border-width: 2.82px;
+          border-style: solid;
+          border-image: linear-gradient(180deg, #C08400 0%, #FFBC07 100%);
+          padding-bottom: 2.82px; /* Offset padding to prevent overlap with content */
+        }
+        .menu-link {
+          transition: color 0.3s ease;
+          cursor: pointer;
+        }
+      `}</style>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative gradient-border">
         {/* Top Section: Logo and Social Icons */}
         <div className="flex flex-col sm:flex-row justify-between items-center py-2">
           <div className="flex items-center space-x-2">
@@ -88,18 +100,18 @@ const NavBar = () => {
         </div>
 
         {/* Bottom Section: Menu Items, Search Bar, and Language Switcher */}
-        <div className="flex flex-col sm:flex-row justify-between items-center ">
+        <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-2 sm:space-y-0 sm:space-x-6">
-            <CustomLink href="/">Home</CustomLink>
-            <CustomLink href="/the-agency">The Agency</CustomLink>
-            <CustomLink href="/awards">Awards</CustomLink>
-            <CustomLink href="/bid-closure">Bid Closure</CustomLink>
-            <CustomLink href="/press-media">Press & Media</CustomLink>
-            <CustomLink href="/resources">Resources</CustomLink>
-            <CustomLink href="/ppa-directive">PPA Directive</CustomLink>
-            <CustomLink href="/report">Report</CustomLink>
-            <CustomLink href="/vacancy">Vacancy</CustomLink>
-            <CustomLink href="/contact">Contact</CustomLink>
+            <CustomLink href="/" className="menu-link hover:text-gray-700">Home</CustomLink>
+            <CustomLink href="/the-agency" className="menu-link hover:text-gray-700">The Agency</CustomLink>
+            <CustomLink href="/awards" className="menu-link hover:text-gray-700">Awards</CustomLink>
+            <CustomLink href="/bid-closure" className="menu-link hover:text-gray-700">Bid Closure</CustomLink>
+            <CustomLink href="/press-media" className="menu-link hover:text-gray-700">Press & Media</CustomLink>
+            <CustomLink href="/resources" className="menu-link hover:text-gray-700">Resources</CustomLink>
+            <CustomLink href="/ppa-directive" className="menu-link hover:text-gray-700">PPA Directive</CustomLink>
+            <CustomLink href="/report" className="menu-link hover:text-gray-700">Report</CustomLink>
+            <CustomLink href="/vacancy" className="menu-link hover:text-gray-700">Vacancy</CustomLink>
+            <CustomLink href="/contact" className="menu-link hover:text-gray-700">Contact</CustomLink>
           </div>
 
           <div className="flex items-center space-x-2 mt-2 sm:mt-0">
@@ -127,7 +139,7 @@ const NavBar = () => {
                 <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-md z-10">
                   <ul>
                     <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">አማረኛ</li>
-                    {/* Add more language options as needed */}
+                   
                   </ul>
                 </div>
               )}
@@ -140,3 +152,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
