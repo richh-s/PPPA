@@ -1,6 +1,4 @@
-// components/ImageSlider.js
 "use client"
-// components/ImageSlider.js
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -14,13 +12,13 @@ const images = [
   },
   {
     id: 2,
-    src: '../assets/images/gallery2.png',
+    src: '../assets/images/gallery1.png',
     alt: 'Image 2',
     caption: 'Image 2 Caption'
   },
   {
     id: 3,
-    src: '../assets/images/gallery3.png',
+    src: '../assets/images/gallery1.png',
     alt: 'Image 3',
     caption: 'Image 3 Caption'
   },
@@ -63,18 +61,21 @@ const ImageSlider = () => {
             {'>'}
           </button>
         </div>
-        <div className="absolute bottom-4 left-0 right-0 mx-auto flex justify-center items-center">
-          {images.map((image, index) => (
-            <div
-              key={image.id}
-              className={`relative w-3 h-3 mx-2 rounded-full`}
-            >
-              {currentIndex === index && (
-                <div className="absolute inset-0 rounded-full bg-gray-700"></div>
-              )}
-            </div>
-          ))}
+      </div>
+      <div className="flex justify-center items-center mt-4">
+        <div className="relative w-6 h-2 mx-2 rounded-full bg-gray-700">
+          <div className="absolute inset-0 rounded-full bg-gray-700"></div>
         </div>
+        {images.map((image, index) => (
+          <div
+            key={image.id}
+            className={`relative w-2 h-2 mx-2 rounded-full ${currentIndex === index ? 'bg-gray-700' : 'bg-gray-400'}`}
+          >
+            {currentIndex === index && (
+              <div className="absolute inset-0 rounded-full bg-gray-700"></div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-// components/ReportAndUpdates.js
+"use client"
 import React from 'react';
 
 const reportItems = [
@@ -27,40 +27,67 @@ const updateItems = [
   { id: 4, title: "SBD Textbooks NCB November Updated", date: "Oct 28, 2021" },
   { id: 5, title: "Find S.B.D for Property Disposal", date: "Oct 28, 2021" },
   { id: 6, title: "Macro-Fiscal Performance in Ethiopia and Recent Fiscal Policy Developments", date: "Oct 28, 2021" },
+  { id: 7, title: "New Directive on Financial Management", date: "Oct 28, 2021" },
+  { id: 8, title: "Government Owned Fixed Asset Management System", date: "Oct 28, 2021" }
 ];
 
 const ReportAndUpdates = () => {
+  const firstColumnUpdates = updateItems.slice(0, 5); // First column with 5 items
+  const secondColumnUpdates = updateItems.slice(5, 8); // Second column with 3 items
+
   return (
     <div className="container mx-auto mt-12 px-4 md:px-16 lg:px-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div>
+        <div className="col-span-1">
           <h1 className="text-3xl font-bold mb-4">Report</h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {reportItems.map(report => (
-              <div key={report.id} className="flex flex-col">
-                <img src={report.imageUrl} alt={report.title} className="w-full h-32 object-cover rounded-lg mb-2" />
-                <div className="flex items-center mb-2">
-                  <span className="bg-[#D2AC47] text-white px-2 rounded">{report.category}</span>
-                  <span className="ml-2 text-[#727272]">{report.date}</span>
+              <div key={report.id} className="relative flex flex-col">
+                <div className="relative w-full h-[160px] mb-2">
+                  <img src={report.imageUrl} alt={report.title} className="w-full h-full object-cover" />
+                  {report.id === 1 && (
+                    <div className="absolute top-6 left-0 w-full h-[20%] p-2 flex items-center">
+                      <div className="text-[#DBDBDB] transform -rotate-90 absolute left-0 top-2 font-bold text-2xl">2014</div>
+                      <p className="ml-16 text-[#0A72B4] text-left font-bold">{report.title}</p> {/* Increased margin here */}
+                    </div>
+                  )}
+                  {report.id === 2 && (
+                    <div className="absolute top-0 left-0 w-full h-[30%] p-2 flex flex-col items-center justify-center bg-[#FFC107] font-bold">
+                      <p className="text-center text-[#013146]">Complaints Summary</p>
+                      <p className="text-center text-[#013146] font-extrabold">2004 to 2010</p>
+                    </div>
+                  )}
                 </div>
-                <p className="text-[#003366] font-bold mb-2">{report.title}</p>
+                <div className="flex items-start mt-2">
+                  <span className="text-[#727272]">{report.date}</span>
+                </div>
                 <p className="text-[#727272]">{report.description}</p>
               </div>
             ))}
           </div>
           <button className="bg-[#FFC107] text-[#212529] px-4 py-2 mt-4 rounded self-start">LOAD MORE</button>
         </div>
-        <div>
+        <div className="col-span-1">
           <h1 className="text-3xl font-bold mb-4">Updates</h1>
-          <div className="space-y-4">
-            {updateItems.map(update => (
-              <div key={update.id} className="flex flex-col">
-                <div className="flex items-center justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8"> {/* Increased gap to match column gap */}
+            <div>
+              {firstColumnUpdates.map((update, index) => (
+                <div key={update.id} className="flex flex-col mb-2"> {/* Increased margin bottom */}
                   <span className="text-[#727272]">{update.date}</span>
-                  <p className="text-[#003366] font-semibold">{update.title}</p>
+                  <p className="text-black font-xs mt-1">{update.title}</p> {/* Added top margin */}
+                  {index < firstColumnUpdates.length - 1 && <hr className="border-t border-[#727272] my-2" />}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div>
+              {secondColumnUpdates.map((update, index) => (
+                <div key={update.id} className="flex flex-col mb-2"> {/* Increased margin bottom */}
+                  <span className="text-[#727272]">{update.date}</span>
+                  <p className="text-black font-xs mt-1">{update.title}</p> {/* Added top margin */}
+                  {index < secondColumnUpdates.length - 1 && <hr className="border-t border-[#727272] my-2" />}
+                </div>
+              ))}
+            </div>
           </div>
           <button className="bg-[#FFC107] text-[#212529] px-4 py-2 mt-4 rounded self-start">LOAD MORE</button>
         </div>
@@ -70,3 +97,5 @@ const ReportAndUpdates = () => {
 };
 
 export default ReportAndUpdates;
+
+
