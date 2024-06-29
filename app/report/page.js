@@ -32,11 +32,11 @@ const updateItems = [
 ];
 
 const ReportAndUpdates = () => {
-  const firstColumnUpdates = updateItems.slice(0, 5); // First column with 5 items
-  const secondColumnUpdates = updateItems.slice(5, 8); // Second column with 3 items
+  const firstColumnUpdates = updateItems.slice(0, 5); 
+  const secondColumnUpdates = updateItems.slice(5, 8); 
 
   return (
-    <div className="container mx-auto mt-12 px-4 md:px-16 lg:px-32">
+    <div className="container mx-auto mt-24 px-4 md:px-16 lg:px-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="col-span-1">
           <h1 className="text-3xl font-bold mb-4">Report</h1>
@@ -48,7 +48,7 @@ const ReportAndUpdates = () => {
                   {report.id === 1 && (
                     <div className="absolute top-6 left-0 w-full h-[20%] p-2 flex items-center">
                       <div className="text-[#DBDBDB] transform -rotate-90 absolute left-0 top-2 font-bold text-2xl">2014</div>
-                      <p className="ml-16 text-[#0A72B4] text-left font-bold">{report.title}</p> {/* Increased margin here */}
+                      <p className="ml-10 text-[#0A72B4] text-left font-bold">{report.title}</p> 
                     </div>
                   )}
                   {report.id === 2 && (
@@ -69,21 +69,21 @@ const ReportAndUpdates = () => {
         </div>
         <div className="col-span-1">
           <h1 className="text-3xl font-bold mb-4">Updates</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8"> {/* Increased gap to match column gap */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8"> 
             <div>
               {firstColumnUpdates.map((update, index) => (
-                <div key={update.id} className="flex flex-col mb-2"> {/* Increased margin bottom */}
+                <div key={update.id} className="flex flex-col mb-2"> 
                   <span className="text-[#727272]">{update.date}</span>
-                  <p className="text-black font-xs mt-1">{update.title}</p> {/* Added top margin */}
+                  <p className="text-black font-xs mt-1">{update.title}</p>
                   {index < firstColumnUpdates.length - 1 && <hr className="border-t border-[#727272] my-2" />}
                 </div>
               ))}
             </div>
             <div>
               {secondColumnUpdates.map((update, index) => (
-                <div key={update.id} className="flex flex-col mb-2"> {/* Increased margin bottom */}
+                <div key={update.id} className="flex flex-col mb-2"> 
                   <span className="text-[#727272]">{update.date}</span>
-                  <p className="text-black font-xs mt-1">{update.title}</p> {/* Added top margin */}
+                  <p className="text-black font-xs mt-1">{update.title}</p> 
                   {index < secondColumnUpdates.length - 1 && <hr className="border-t border-[#727272] my-2" />}
                 </div>
               ))}

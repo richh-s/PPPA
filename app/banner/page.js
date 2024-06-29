@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <div className="bg-[#003366] text-white py-16 w-full mt-12 mb-8  ">
+    <div className="bg-[#003366] text-white py-16 w-full mt-24 mb-8  ">
       <div className="container mx-auto px-6 lg:px-0 flex flex-col lg:flex-row items-center justify-center ">
       <div className="bg-white rounded-lg p-2 lg:p-4 w-3/4 lg:w-auto lg:h-[230px] lg:max-w-[200px] flex items-center justify-center lg:mr-6">
           <img src="../assets/images/banner1.png" alt="EGP Logo" className="h-auto max-w-full" />

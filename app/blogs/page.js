@@ -42,7 +42,7 @@ const blogItems = [
 
 const Blogs = () => {
   return (
-    <div className="container mx-auto mt-8 px-4 md:px-16 lg:px-24">
+    <div className="container mx-auto mt-24 px-4 md:px-16 lg:px-24">
       <hr className="mb-6 border-t-1 border-[#0D0D0D]" />
       <h1 className="text-3xl font-bold mb-4 text-[#272727]">Blogs</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">

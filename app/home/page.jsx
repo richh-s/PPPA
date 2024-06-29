@@ -53,7 +53,7 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[90vh] overflow-hidden py-6">
+    <div className="relative w-full h-[90vh] overflow-hidden py-6 mt-16">
       <AnimatePresence>
         {slides.map((slide, index) => (
           index === current && (

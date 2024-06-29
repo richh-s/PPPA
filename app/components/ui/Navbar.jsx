@@ -12,14 +12,14 @@ const CustomLink = ({ href, children, className }) => {
 
   if (isExternalLink) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={`text-black ${className}`}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={`text-black ${className} whitespace-nowrap`}>
         {children}
       </a>
     );
   } else {
     return (
       <Link href={href}>
-        <div className={`text-black ${className}`}>
+        <div className={`text-black ${className} whitespace-nowrap`}>
           {children}
         </div>
       </Link>
@@ -123,27 +123,27 @@ const NavBar = () => {
               <input
                 type="text"
                 placeholder="Search"
-                className="pl-8 pr-4 py-1 border border-gray-300 rounded-md focus:outline-none text-sm w-[160px]"
+                className="pl-8 pr-4  py-1 border border-gray-300 rounded-md focus:outline-none text-sm w-[140px]"
               />
             </div>
 
             {/* Language Switcher */}
             <div className="relative">
-              <button
-                onClick={toggleLanguageMenu}
-                className="text-black hover:text-gray-300 focus:outline-none flex items-center"
-              >
-                English <IoIosArrowDown className="ml-1" />
-              </button>
-              {showLanguageMenu && (
-                <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 shadow-lg rounded-md z-10">
-                  <ul>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">አማረኛ</li>
-                   
-                  </ul>
-                </div>
-              )}
-            </div>
+  <button
+    onClick={toggleLanguageMenu}
+    className="text-black hover:text-gray-700 focus:outline-none flex items-center"
+  >
+    English <IoIosArrowDown className="ml-1" />
+  </button>
+  {showLanguageMenu && (
+    <div className="absolute right-0 mt-2 w-35 h-10 bg-white border border-gray-200 shadow-lg rounded-md z-10 transform transition-transform duration-300 ease-out scale-100">
+      <ul>
+        <li className="px-4 py-2 hover:text-gray-700 cursor-pointer text-center">አማረኛ</li>
+      </ul>
+    </div>
+  )}
+</div>
+
           </div>
         </div>
       </div>

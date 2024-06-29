@@ -36,7 +36,7 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8 px-4 md:px-16 lg:px-32">
+    <div className="container mx-auto mt-24 px-4 md:px-16 lg:px-32">
       <h1 className="text-3xl font-bold mb-4 text-[#272727]">Image Gallery</h1>
       <div className="relative w-full overflow-hidden">
         <motion.div
