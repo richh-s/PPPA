@@ -54,7 +54,7 @@ const ReportAndUpdates = () => {
                   {report.id === 2 && (
                     <div className="absolute top-0 left-0 w-full h-[30%] p-2 flex flex-col items-center justify-center bg-[#FFC107] font-bold">
                       <p className="text-center text-[#013146]">Complaints Summary</p>
-                      <p className="text-center text-[#013146] font-extrabold">2004 to 2010</p>
+                      <p className="text-center text-[#013146] font-black">2004 to 2010</p>
                     </div>
                   )}
                 </div>

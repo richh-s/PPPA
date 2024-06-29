@@ -9,7 +9,7 @@ const Banner = () => {
           <img src="../assets/images/banner1.png" alt="EGP Logo" className="h-auto max-w-full" />
         </div>
         <div className="text-center lg:text-left">
-          <h1 className="text-3xl lg:text-4xl font-bold mb-4 lg:max-w-[800px] ">
+          <h1 className="text-2xl lg:text-4xl font-bold mb-4 lg:max-w-[800px] ">
             A Transform public procurement through digitalization Economic Reform Agenda
           </h1>
           <p className="text-sm mb-4 lg:max-w-[500px] ">

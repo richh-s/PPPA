@@ -18,7 +18,7 @@ const Resources = () => {
       <h1 className="text-3xl font-bold mb-4 text-[#272727]">Resources</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {resourceItems.map(resource => (
-          <div key={resource.id} className="flex items-center justify-between bg-[#074CFF1F] p-4 rounded-lg shadow-sm">
+          <div key={resource.id} className="flex items-center justify-between bg-[#074CFF1F] p-4 shadow-sm">
             <p className="text-black">{resource.title}</p>
             <a href={resource.downloadLink} className="bg-[#FFC107] text-[#212529] px-4 py-2 rounded">DOWNLOAD</a>
           </div>
