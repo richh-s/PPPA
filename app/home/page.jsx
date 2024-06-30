@@ -1,4 +1,3 @@
-
 "use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -55,14 +54,15 @@ const Slider = () => {
 
   return (
     <div className="relative w-full h-[90vh] overflow-hidden py-6 mt-16 ">
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {slides.map((slide, index) => (
           index === current && (
             <motion.div
               key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -100, opacity: 0 }}
+              transition={{ duration: 0.5 }}
               className="absolute inset-0 w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.imageUrl})` }}
             >

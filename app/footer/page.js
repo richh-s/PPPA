@@ -6,8 +6,8 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube, FaTelegra
 const Footer = () => {
  
   return (
-    <footer className="bg-[#003366] text-white py-12 w-full mt-24">
-      <div className="container mx-auto px-4 md:px-16 lg:px-32 max-w-7xl ">
+    <footer className="bg-[#003366] text-white py-12 w-full mt-24 ">
+      <div className="container mx-auto px-4 md:px-16 lg:px-32 max-w-full ">
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <div className="md:col-span-2 flex flex-col items-start">
             <img src="../assets/images/footer.png" alt="Logo" className="w-32 mb-4" />
