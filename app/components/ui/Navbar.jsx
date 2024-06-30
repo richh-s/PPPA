@@ -62,8 +62,8 @@ const NavBar = () => {
             <div className="cursor-pointer flex items-center space-x-2">
               <Image src={logo} alt="Logo" width={50} height={50} className="cursor-pointer" />
               <div className="hidden sm:block">
-                <h1 className="text-lg font-bold">የመንግስት ግዥና ንብረት ባለሥልጣን</h1>
-                <h2 className="text-sm">Public Procurement and Property Authority</h2>
+                <h1 className="text-lg font-bold text-[#092B57]">የመንግስት ግዥና ንብረት ባለሥልጣን</h1>
+                <h2 className="text-sm text-[#092B57]">Public Procurement and Property Authority</h2>
               </div>
             </div>
           </Link>
@@ -135,7 +135,7 @@ const NavBar = () => {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="pl-8 pr-4 py-1 border border-gray-300 rounded-md focus:outline-none text-sm w-[140px]"
+                  className="pl-8 pr-4 py-1 border border-gray-300 rounded-md focus:outline-none ml-2 text-sm w-[130px]"
                 />
               </div>
 
