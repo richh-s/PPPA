@@ -1,16 +1,10 @@
 // components/Footer.js
+"use client"
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaYoutube, FaTelegramPlane, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 const Footer = () => {
-    const watermarkStyle = {
-        backgroundImage: "url('/assets/images/mask.png')",
-        backgroundSize: '150% 150%', // Increase the size of the background image
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        opacity: 0.5, // Reduce the opacity
-    };
-    
+ 
   return (
     <footer className="bg-[#003366] text-white py-12 w-full mt-24">
       <div className="container mx-auto px-4 md:px-16 lg:px-32 max-w-7xl">
@@ -80,27 +74,47 @@ const Footer = () => {
       Submit
     </button>
   </div>
-  <div className="flex items-center space-x-2 whitespace-nowrap ">
-    <div  style={watermarkStyle}></div>
-    <h3 className="font-bold mr-2">Follow us</h3>
-    <div className="bg-white p-1 rounded-full">
+  <div className="relative footer-watermark flex items-center space-x-2 whitespace-nowrap mt-4">
+    <h3 className="font-bold relative z-10">Follow us</h3>
+    <div className="bg-white p-1 rounded-full relative z-10">
       <FaFacebookF className="text-sm text-[#003366]" />
     </div>
-    <div className="bg-white p-1 rounded-full">
+    <div className="bg-white p-1 rounded-full relative z-10">
       <FaTwitter className="text-sm text-[#003366]" />
     </div>
-    <div className="bg-white p-1 rounded-full">
+    <div className="bg-white p-1 rounded-full relative z-10">
       <FaLinkedinIn className="text-sm text-[#003366]" />
     </div>
-    <div className="bg-white p-1 rounded-full">
+    <div className="bg-white p-1 rounded-full relative z-10">
       <FaInstagram className="text-sm text-[#003366]" />
     </div>
-    <div className="bg-white p-1 rounded-full">
+    <div className="bg-white p-1 rounded-full relative z-10">
       <FaYoutube className="text-sm text-[#003366]" />
     </div>
-    <div className="bg-white p-1 rounded-full">
+    <div className="bg-white p-1 rounded-full relative z-10">
       <FaTelegramPlane className="text-sm text-[#003366]" />
     </div>
+    <style jsx>{`
+      .footer-watermark {
+        position: relative;
+        z-index: 1;
+      }
+      .footer-watermark::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 400px; /* Increase the size of the watermark */
+        height: 200px; /* Increase the size of the watermark */
+        background-image: url('/assets/images/mask.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.2;
+        z-index: 0;
+      }
+    `}</style>
   </div>
 </div>
 
