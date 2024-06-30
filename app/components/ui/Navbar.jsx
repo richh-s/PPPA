@@ -41,7 +41,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-white text-black z-50 shadow-md mb-4">
+    <div className="fixed top-0 left-0 w-full bg-white text-black z-50 shadow-md ">
       <style jsx>{`
         .gradient-border {
           border-width: 2.82px;
@@ -56,7 +56,7 @@ const NavBar = () => {
       `}</style>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative gradient-border">
         {/* Top Section: Logo and Social Icons */}
-        <div className="flex justify-between items-center  sm:py-4">
+        <div className="flex justify-between items-center sm:py-4">
           {/* Logo */}
           <Link href="/" passHref>
             <div className="cursor-pointer flex items-center space-x-2">
