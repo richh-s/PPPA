@@ -56,11 +56,11 @@ const NavBar = () => {
       `}</style>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative gradient-border">
         {/* Top Section: Logo and Social Icons */}
-        <div className="flex justify-between items-center py-2 sm:py-4">
+        <div className="flex justify-between items-center  sm:py-4">
           {/* Logo */}
           <Link href="/" passHref>
             <div className="cursor-pointer flex items-center space-x-2">
-              <Image src={logo} alt="Logo" width={50} height={50} className="cursor-pointer" />
+              <Image src={logo} alt="Logo" width={100} height={100} className="cursor-pointer" />
               <div className="hidden sm:block">
                 <h1 className="text-lg font-bold text-[#092B57]">የመንግስት ግዥና ንብረት ባለሥልጣን</h1>
                 <h2 className="text-sm text-[#092B57]">Public Procurement and Property Authority</h2>
