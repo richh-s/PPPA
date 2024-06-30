@@ -1,4 +1,5 @@
-"use client"
+
+"use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -12,7 +13,7 @@ const slides = [
       { text: "Register", href: "#" }
     ],
     imageUrl: "/assets/images/slider1.png",
-    overlayType: "full" 
+    overlayType: "full"
   },
   {
     title: "Public Procurement And Property Authority",
@@ -22,7 +23,7 @@ const slides = [
       { text: "Register", href: "#" }
     ],
     imageUrl: "/assets/images/slider2.png",
-    overlayType: "gradient" 
+    overlayType: "gradient"
   },
   {
     title: "Public Procurement And Property Authority",
@@ -32,7 +33,7 @@ const slides = [
       { text: "Register", href: "#" }
     ],
     imageUrl: "/assets/images/slider3.png",
-    overlayType: "gradient" 
+    overlayType: "gradient"
   },
 ];
 
@@ -66,16 +67,16 @@ const Slider = () => {
               style={{ backgroundImage: `url(${slide.imageUrl})` }}
             >
               <div
-                className={`absolute inset-0 flex items-center justify-start p-10 ${
+                className={`absolute inset-0 flex items-center ${
                   slide.overlayType === "full"
                     ? "bg-blue-300 bg-opacity-50"
                     : "bg-gradient-to-r from-[#0065AE] to-[rgba(15, 49, 97, 0)]"
-                }`}
+                } p-10`}
               >
-                <div className="text-white max-w-lg ml-[120px]">
+                <div className="text-white max-w-lg lg:ml-[120px] lg:text-left text-center mx-auto">
                   <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
                   <p className="mb-8">{slide.description}</p>
-                  <div className="flex space-x-4">
+                  <div className="flex flex-col lg:flex-row lg:space-x-4 space-y-4 lg:space-y-0 justify-center lg:justify-start">
                     {slide.buttons.map((button, idx) => (
                       <a
                         key={idx}

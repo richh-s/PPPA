@@ -75,7 +75,7 @@ const ReportAndUpdates = () => {
                 <div key={update.id} className="flex flex-col mb-2"> 
                   <span className="text-[#727272]">{update.date}</span>
                   <p className="text-black font-xs mt-1">{update.title}</p>
-                  {index < firstColumnUpdates.length - 1 && <hr className="border-t border-[#727272] my-2" />}
+                  {index < firstColumnUpdates.length - 1 && <hr className="border-t border-[#BBBBBB] my-2" />}
                 </div>
               ))}
             </div>
@@ -84,7 +84,7 @@ const ReportAndUpdates = () => {
                 <div key={update.id} className="flex flex-col mb-2"> 
                   <span className="text-[#727272]">{update.date}</span>
                   <p className="text-black font-xs mt-1">{update.title}</p> 
-                  {index < secondColumnUpdates.length - 1 && <hr className="border-t border-[#727272] my-2" />}
+                  {index < secondColumnUpdates.length - 1 && <hr className="border-t border-[#BBBBBB] my-2" />}
                 </div>
               ))}
             </div>
